@@ -240,3 +240,80 @@ to_? = Pode ser usado de outra maneira além do gets.
       5.times { puts 'Bruno' }#Executa o comando puts 5 vezes.
 
       5.times { |count| puts "#{count} - Bruno" }#Executa o comando puts 5 vezes, mas o count mostra o tanto de vezes que foi repotido.
+      
+    
+# Paradigma
+  Paradigma é um conjunto de resgras que estabelecem fronteiras e descrevem como resolver os problemas dentrodestas fronteiras.
+  Os paradigmas influenciam nossa percepção, ajudam-nos a organizar e a coordenar a maneira como olhamos para o  mundo.
+  Logo a programação orientada a objetos (POO) é um paradigma para o desenvolvimento de software que baseia-se na utilização de componentes individuais (objetos) que colaboram para construir sistemas mais complexos. A colaboração entre os objetos é feita através do envio de mensagens.
+  Paradigma de objetos baseia-se em alguns conceitos, como:    
+- Classes
+- Objetos
+- Encapsulamento
+- Herança 
+- Dentre outros.
+    
+    
+# 4 Pilares da orientação ao objeto
+  - Abstração
+    - Imaginar o objeto
+      - Identidade única
+      - Atributos
+      - Métodos
+  - Encapsulamento
+    - Esconder as propriedades dos objetos para obter mais segurança.
+  - Herança
+    - Permite o reúso de código.
+  - Polimorfismo
+    - É a capacidade de referenciar um objeto de várias formar diferentes.
+    
+# Classes
+  Uma classe é um gabarito para a definição de objetos. Através de definição de uma classe, descreve-se que **propriedades/atributos** e **métodos/ações** o objeto terá.    
+  - Uma classe representa um conjunto de objetos com características afins.
+  - Uma classe define o comportamento dos objetos através de seus métodos, e quais estados ele é capaz de manter através de seus atributos.
+  
+  Exemplos:
+    É  possível especificar classes para entidades físicas, conceituais ou de software.
+  - **Entidade Física:** caminhão, carro, bicicleta, etc.   
+  - **Entidade Conceitual:** processo químico, matrícula, etc.      
+  - **Entidade de Software:** lista encadeada, arquivo, etc.
+      
+  Exemplo: 
+  - A classe "Lâmpada", pode conter os atributos "potência" e "voltagem", que sçao características comuns à todas as lâmpadas, e pode conter as ações "ligar" e "desligar", que também são características comuns.
+  
+# Encapsulamento
+  Se refere a esconder os dados (atributos) dentro do objeto.
+  - Produz duas visões do objeto:
+    - Visão Interna (COMO o objeto faz)
+    - Visão Externa (O QUE o objeto faz)
+  Exemplo:
+    - O funcionamento interno de um telefone é escondido (ou encapsulado) do usuário. Para o usuário realizar uma chamada telefônica (visão externa) ele não precisa conhecer os detalhes da eletrônica utilizados no telefone (visão interna)
+
+### UML -> A Unified Modeling Language, ou Linguagem Unificada de Modelagem é, como o nome indica, uma linguagem de notação utilizada para modelar e documentar as diversas fases do desenvolvimento de sistemas orientados a objetos. 
+
+Em setratando de classes, o encapsulamento é obtido através da visibilidade, conhecida também como "modificadores de acesso".
+Os modificadores de acessos mais comuns são:
+  - **public / público:** Representado por um sinal de "+" na notação UML. Elementos declarados como público podem ser cessados a partir de qualquer outra classe.
+  - **private / privado:** Representado por um sinal de menos "-" na notaçãp UML. Elementos private só podem ser acessados pela proópria classe.
+  - **protected / protegido:** Representado por um sinal de sustenido "#" na notação UML. Elementos protected só podem ser acessados pela proópria classe e por suas descendentes.
+  
+ # Objeto
+    "Classes dão fábricas de objetos", "Objetos são instâncias de uma classe".
+  Um objeto é capaz de armazenar estados através de seus atributos e reagir a mensagens enviadas a ele, assim como se relacionar e enviar mensagens a outros objetos.
+  - Um objeto é qualquer indivíduo, lugar, evento, coisa, tela, relatório ou conceito que seja aplicável ao sistema.
+  - Todo objeto pertence a uma determinada classe e possui atributos próprios.
+  - Os atributos são mutáveis e podem receber diferentes valores de acordo com as características do objeto.
+  A criação de um objeto consiste em sua instanciação, segundo, "cada instância tem seus próprios valores de atributos, mas compartilha o nome e o comportamentos dos etributos com as outras instâncias da classe"
+  
+  Exemplo
+          
+          Cachorro                        Istâncias
+            - Atributos:      
+              - nome                      Nome: Rex                 Nome: Ralph           Nome: Hórus
+              - peso                      Peso: 10kg                Peso: 5kg             Peso: 25kg
+              - cor do pêlo               Cor do pêlo: Preta        Cor do pêlo: Branca   Cor do pêlo: Tigrado
+            - Métodos:
+              - latir()
+              - abanar()
+              
+              
