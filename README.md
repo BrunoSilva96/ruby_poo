@@ -317,3 +317,22 @@ Os modificadores de acessos mais comuns são:
               - abanar()
               
               
+# Deefinindo classes
+  Em Ruby definimos uma classe da seguinte forma.
+  Exemplo:
+        
+        
+              class Conta
+                corpoDaClasse
+              end
+              
+  O nome da classe inicia-se com letra maiúscula e para nomes compostos devemos usar o padrão CamelCase.
+  Exemplo: NomeDaMinhaClasse
+    
+  O corpo de uma classe deve conter:
+  - Atributos
+  - Métodos
+  - Construtor (método de inicialização)
+  
+  Instanciando uma Classe (linha de código)
+  - objeto = Classe.new 
