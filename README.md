@@ -338,3 +338,93 @@ Os modificadores de acessos mais comuns são:
   
   Instanciando uma Classe (linha de código)
   - objeto = Classe.new 
+ 
+# Definindo métodos
+  Métodos são funções.
+  
+            class Pessoa
+             def gritar
+                 puts "Bora BILL!!"
+             end
+
+             def agradecer
+                 puts "Obrigado!"
+             end
+            end
+
+            people = Pessoa.new
+
+            people.gritar
+            people.agradecer
+            
+         
+ ### Convenções a serem usadas:
+ O nome de método inicia-se com letra minúscula e para nomes compostos devemos usar o padrão snake_case
+ Exemplo: nome_do_meu_metodo
+ 
+ ### Método com parâmetros
+ 
+
+                        class Pessoa
+                          #def gritar(parametro = "Bora mulher do BILL!!!") caso nenhum parâmetro for passado, prevalece o que clocamos como padrão dentro da área de parâmetros.
+                          def gritar(parametro)#Método com parâmetro 
+                             puts parametro
+                          end
+
+                          def agradecer
+                             puts "Obrigado!"
+                          end
+                          end
+
+                        people = Pessoa.new#Instanciou
+
+                        people.gritar("Bora fi do BILL!!!")#Chamou o método com parâmetro
+                        people.agradecer
+          
+# Definindo atributos (Características)
+  **Existe uma forma diferente e mais tranquila de se fazer, ela está no arquivo que fiz sobre esse assunto**
+    
+                    class Pessoa
+                       @nome = nil # Variavel de instancia, toda vez que um objeto for instanciado, ele vai ter uma só para ele.
+                       @idade = nil #Esses são os atributos
+
+                       def guardar_nome(nome)
+                          @nome = nome
+                       end
+
+                       def mostrar_nome
+                          @nome
+                       end
+
+                       def guardar_idade(idade)
+                          @idade = idade
+                       end
+
+                       def mostrat_idade
+                          @idade
+                       end
+
+                       def gritar(texto)#Método com parâmetro 
+                          puts texto
+                       end
+
+                       def agradecer
+                          puts "Obrigado!"
+                       end
+                    end
+
+                    pessoa = Pessoa.new#Instanciou
+
+                    pessoa.guardar_nome("Bruno Silva")
+                    pessoa.guardar_idade("26")
+                    
+                    puts pessoa.mostrar_nome
+                    puts pessoa.mostrat_idade
+
+                    pessoa2 = Pessoa.new#Instanciando uma nova pessoa, mostrando que a variavel da instancia vai gerar outro objeto com as caracteristicas do novo objeto criado(pessoa2)
+
+                    pessoa2.guardar_nome("Rosagela Figueiredo")
+                    pessoa2.guardar_idade("50")
+                    
+                    puts pessoa2.mostrar_nome
+                    puts pessoa2.mostrat_idade
