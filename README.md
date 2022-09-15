@@ -317,7 +317,7 @@ Os modificadores de acessos mais comuns são:
               - abanar()
               
               
-# Deefinindo classes
+# Definindo classes
   Em Ruby definimos uma classe da seguinte forma.
   
   Exemplo:
