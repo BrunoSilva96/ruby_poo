@@ -467,5 +467,5 @@ Os modificadores de acessos mais comuns são:
                     puts pessoa2.nome
                     puts pessoa2.idade
                     
-                    **No arquivo do código mostra como instanciar direto passando por parametro. Dois exercícios foram executados para fixação. ** 
+                    **No arquivo do código mostra como instanciar direto passando por parametro. Dois exercícios foram executados para fixação.** 
                     
