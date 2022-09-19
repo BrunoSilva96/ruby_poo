@@ -428,3 +428,44 @@ Os modificadores de acessos mais comuns são:
                     
                     puts pessoa2.mostrar_nome
                     puts pessoa2.mostrat_idade
+
+
+# Métodos construtores ou de inicialização
+  Permitem inicializar um objeto com dados "padrão".(initialize).
+  
+  
+                       class Pessoa
+                       attr_accessor :nome, :idade #Atributos
+
+                       def initialize
+                          @nome = "Vini"
+                          @idade = 0
+                       end
+
+                       def gritar(texto)
+                          puts texto
+                       end
+
+                       def agradecer
+                          puts "Obrigado!"
+                       end
+                    end
+
+                    pessoa = Pessoa.new
+
+                    #pessoa.nome = "Bruno Silva"
+                    pessoa.idade = 26
+
+                    puts pessoa.nome
+                    puts pessoa.idade
+
+                    pessoa2 = Pessoa.new
+
+                    pessoa2.nome = "Rosagela Figueiredo"
+                    #pessoa2.idade = 50
+
+                    puts pessoa2.nome
+                    puts pessoa2.idade
+                    
+                    **No arquivo do código mostra como instanciar direto passando por parametro. Dois exercícios foram executados para fixação. ** 
+                    
