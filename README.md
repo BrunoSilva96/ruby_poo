@@ -14,19 +14,19 @@ to_? = Pode ser usado de outra maneira além do gets.
 
 # Operadores relacionais
 
-  1- >  - Mario que
+  1 - >   Maior que
   
-  2- <  - Menor que
+  2 - <   Menor que
   
-  3- >= - Maior ou igual que
+  3 - >=  Maior ou igual que
   
-  4- <= - Menor ou igual que
+  4 - <=  Menor ou igual que
   
-  5- == - Igual
+  5 - ==  Igual
   
-  6- != - Diferente
+  6 - !=  Diferente
   
-  7- <=> - Spaceship: Retorna -1, 0, -1, Coforme o nuemro da esquerda muda, se for menor que o da direita (-1), se for igual(0) e se for maior(1).
+  7 - <=>  Spaceship: Retorna -1, 0, -1, Coforme o nuemro da esquerda muda, se for menor que o da direita (-1), se for igual(0) e se for maior(1).
 
 # Estruturas Condicionais
 ### if...elsif...else
@@ -468,4 +468,127 @@ Os modificadores de acessos mais comuns são:
                     puts pessoa2.idade
                     
                     **No arquivo do código mostra como instanciar direto passando por parametro. Dois exercícios foram executados para fixação.** 
-                    
+                                              
+### Aula 36, criamos um minigame com números, aproveitei e aprimorei pra um jogo onde mostra um tanto a mais de infomação na hora que esta rodando.
+
+# Herança
+  Quando uma Classe(Filha) herda metódos e atributos de uma outra Classe(Pai)
+  
+                                         class Pai
+                                         attr_accessor :nome
+
+                                         def falar(texto = "Alô!")
+                                            texto
+                                         end
+                                      end
+
+                                      class Filha < Pai #Classe Filha herdando as características da Classe Pai, A classe Filha ja tem acesso aos atrubutos e métodos que há na classe Pai.
+                                      end
+
+                                      pai = Pai.new
+                                      pai.nome = "Bruno"
+                                      puts pai.nome
+                                      puts pai.falar
+
+                                      puts "----------------------------"
+
+                                      filha = Filha.new
+                                      filha.nome = "Micalateia"
+                                      puts filha.nome 
+                                      puts filha.falar("Hummmm Micalateia.")
+                                      
+                                      # Exemplo extra dentro da pasta de Herança.
+
+
+
+# Method overriding
+  Sobrescreve métodos da classe Pai
+   
+                              class Calculadora
+                                 def somar(numero1, numero2)
+                                    numero1 + numero2
+                                 end
+                              end
+
+                              class CalculadoraFashion < Calculadora
+                              # Overriding (SObrescrita de Método)
+                                 def somar(numero1, numero2)#Sobrescrever o método, e adicionando uma funcionalidade a mais na hora do puts
+                                    "A soma é: #{numero1 + numero2}"
+                                 end
+                              end
+
+                              ########################
+
+                              calculadora = Calculadora.new
+                              calculadora.somar(13, 13)
+
+
+                              calculadora_fashion = CalculadoraFashion.new
+                              calculadora_fashion.somar(13, 13)
+                              
+                              
+ # Super  
+    O super serve basicamente para invocar o método correspondente na classe pai.
+    Exemplos:
+    
+                        class Franquia
+                           def descricao
+                              "Franquia!"
+                           end
+                        end
+
+                        class Franquiado < Franquia
+                           def descricao
+                              #Invocando o método descrição da classe Pai/Franquia
+                              puts super#Não foi passado parametro pois o initialize da classe Pai não necessita de parametro.
+                              "Franquiado!"
+                           end
+                        end
+
+
+                        franquia = Franquia.new
+                        puts franquia.descricao
+
+                        puts "--------------------------------"
+
+                        franquiado = Franquiado.new
+                        puts franquiado.descricao
+
+
+                        puts "------------------------------"
+                        ##################################
+                        ##################################
+                        ##################################
+
+
+                        class Conta
+                           attr_reader :numero_da_conta, :saldo
+
+                           def initialize(numero_da_conta, saldo = 0)
+                              @numero_da_conta = numero_da_conta
+                              @saldo = saldo
+                           end
+                        end
+
+                        class ContaEspecial < Conta
+                           attr_reader :limite_cheque_especial
+
+                           def initialize(numero_da_conta, saldo, limite_cheque_especial)
+                              super(numero_da_conta, saldo)#Initialize da classe Pai
+                              #@numero_da_conta = numero_da_conta
+                              #@saldo = saldo
+                              #O super é equivalente a escrever o código assim.(neste caso)
+                              @limite_cheque_especial = limite_cheque_especial
+                           end
+                        end
+
+                        conta = Conta.new("001", 200.00)
+                        puts conta.numero_da_conta
+                        puts conta.saldo
+
+                        puts "------------------------------"
+
+                        conta_especial = ContaEspecial.new("002", 1000.00, 5000.00)
+                        puts conta_especial.numero_da_conta
+                        puts conta_especial.saldo
+                        puts conta_especial.limite_cheque_especial
