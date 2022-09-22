@@ -374,7 +374,7 @@ Os modificadores de acessos mais comuns são:
                           def agradecer
                              puts "Obrigado!"
                           end
-                          end
+                        end
 
                         people = Pessoa.new#Instanciou
 
@@ -617,3 +617,87 @@ Os modificadores de acessos mais comuns são:
                                 outro_teste = OutroTeste.new
                                 outro_teste.meu_self
   
+# Métodos de instância x Métodos de Classe
+  Diferente do método de instância que temos que instânciar um objeto para que possamos chamar um étodo dentro de uma classe, o método de classe chamamos o metodo usando o nome da classe, veja no exemplo.
+  
+                                class Teste
+                                   def ola #Método de Instância
+                                      "Olá!"
+                                   end
+
+                                   def self.hello#Método de Classe
+                                      "Hello!"
+                                   end
+                                end
+
+                                objeto_teste = Teste.new
+                                puts objeto_teste.ola
+
+                                puts Teste.hello #Não necessita da criação de um objeto para que cpossa chamar um método
+                                
+                                
+# Constantes e Classes Constantes
+- Variáveis constantes são declaradas com letras maiusculas e facilicam na hora de definir um número fixo para uma variável.  
+  (Ex: PI = 3.14).
+  
+- Classes Constantes
+  Exemplo
+                                class Teste
+                                   PI = 3.14
+                                   NOME_APP = "Sistema de CRM"
+                                   NOME_CLIENTE = "Bruno"
+                                end
+
+                                puts Teste::PI 
+                                puts Teste::NOME_APP
+                                puts Teste::NOME_CLIENTE
+                                
+# Módulos
+  Módulos Ruby são similares a classes em relação ao fato de que também armazena uma coleção de métodos, contantes, outras definições de módulos e classes. Mas diferente das classes, você não pode criar objetos baseados em módulos nem pode criar módulos que herdam desse módulo. Módulos são um bom lugar para armazenar constante em um local centralizado.
+  
+  Objetivos: Primeiro eles agem como **namespace**, permitindo que você defina métodos cujos nomes não irão colidir com aqueles definidos em outras partes de um programa.
+  
+  Em segundo lugar, permitem que você compartilhe funcionalidade entre classes.
+  
+ 
+                   Arquivo app.rb:
+                        
+                         require_relative 'pagamento'
+
+                         include Pagamento # Trabalhando com constantes
+
+                         puts "Digite a bandeira do cartão"
+                         bandeira = gets.chomp
+
+                         puts "Digite o número do cartão"
+                         numero = gets.chomp
+
+                         puts "Digite o valor da compra: "
+                         valor = gets.chomp
+
+                         # Trabalhando com métodos
+                         puts Pagamento.pagar(bandeira, numero, valor)# O nome Pagamento não é necessario, mas colocando para uma melhor visualização.
+
+                         # Trabalhando com Classes
+                         cobrando = Pagamento::Finalizando.new# O nome Pagamento não é necessario, mas colocando para uma melhor visualização.
+                         puts cobrando.pagando
+
+                         puts APROVADO
+                            
+                  Arquivo pagamento.rb:
+                     
+                     
+                         module Pagamento
+ 
+                           APROVADO =  "Pagamento aprovado!" # Trabalhando com constantes
+
+                           def pagar(bandeira, numero, valor)# Trabalhando com métodos
+                              "Pagando com o cartão #{bandeira} Número #{numero}, o valor de R$ #{valor}...."
+                           end
+
+                           class Finalizando # Trabalhando com classes
+                              def pagando
+                                 "Processando pagamento..."
+                              end
+                           end
+                         end
