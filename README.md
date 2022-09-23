@@ -701,3 +701,112 @@ Os modificadores de acessos mais comuns são:
                               end
                            end
                          end
+
+# Mixins
+  Permite que façamos uma pseudo herança múltipla.
+  Exemplo
+            
+            
+                  Arquivo a.rb
+                  
+                        module A 
+                           def a1
+                              puts "a1"
+                           end
+                           def a2
+                              puts "a2"
+                           end  
+                        end
+                        
+                 Arquivo b.rb
+                 
+                        module B
+                           def b1
+                              puts "b1"
+                           end
+                           def b2
+                              puts "b2"
+                           end
+                        end
+                        
+                 Arquivo exemplo.rb
+                 
+                          require_relative 'a'
+                          require_relative 'b'
+
+
+                          class Exemplo
+
+                             include A
+                             include B
+
+                             def ex1
+                                puts "ex1"
+                             end
+                          end
+                          
+                 Arquivo app.rb
+                          
+                          require_relative 'exemplo'
+
+                          x = Exemplo.new
+
+                          #Módulo A
+                          x.a1 
+                          x.a2
+
+                          #Módulo B
+                          x.b1
+                          x.b2
+
+                          #Classe exemplo
+                          x.ex1
+                          
+                          
+# Polimorfismo (Duck Typing)
+  Desenvolvedores Ruby estão mais acostumados em definir objetos pelo que eles podem fazer, do que por seu tipo. Esta técnica é chamada de duck typing
+   Exemplo
+   
+                        class Pato
+                           def quack!
+                              "Quack! Quack!"
+                           end
+                        end
+
+                        class PatoDoente
+                           def quack!
+                              "Queeeeeck...."
+                           end
+                        end
+
+                        class Pessoa
+                           def apertar_o_pato(pato)
+                              puts pato.quack!
+                           end
+                        end
+
+                        pato = Pato.new
+                        pato2 = PatoDoente.new
+
+                        pessoa = Pessoa.new
+
+                        pessoa.apertar_o_pato(pato)
+
+                        pessoa.apertar_o_pato(pato2)
+                        
+ # Refrescando os pilares da Programação Orientada a Objeto       
+ 
+ - Abstração
+    - Imaginar o objeto
+      - Identidade única
+      - Atributos
+      - Métodos
+ 
+ - Encapsulamento
+    - Esconder as propriedades dos objetos para obter mais segurança.
+ 
+ - Herança
+    - Permite reúso de código.
+ 
+ - Polimorfismo
+    - É a capacidade de referenciar um objetod e várias dormas diferentes.
