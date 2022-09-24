@@ -810,3 +810,10 @@ Os modificadores de acessos mais comuns são:
  
  - Polimorfismo
     - É a capacidade de referenciar um objetod e várias dormas diferentes.
+
+# Extras do curso
+- Reabrindo Classes == Monkey Patch (Maneira de criar e definir métodos atravez de suas classes)
+- Split -> "Bruno Silva".split == ["Bruno", "Silva"] Cria um array das palavras.
+  - "Bruno".split('') == ["B", "r", "u", "n", "o"] 
+  - "Bruno/Silva".split("/") == ["Bruno", "Silva"]  Ao indicar o limitador, ele separa de certa forma.
+- Gems
