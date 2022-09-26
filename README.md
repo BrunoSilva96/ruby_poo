@@ -817,3 +817,15 @@ Os modificadores de acessos mais comuns são:
   - "Bruno".split('') == ["B", "r", "u", "n", "o"] 
   - "Bruno/Silva".split("/") == ["Bruno", "Silva"]  Ao indicar o limitador, ele separa de certa forma.
 - Gems
+
+# Bundler
+  É uma gem que nos proporciona instalar gems de uma forma mais pratica, tudo no mesmo arquivo podemdo ser usado em qualquer parte do projeto.
+  Exemplo:
+  
+                        Arquivo Gemfile(Tem que ser escrito com a primeira letra maiuscula mesmo)
+
+                        source 'https://RubyGems.org'
+
+                        gem 'lerolero_generator'
+                        gem 'cpf_utils'
+                        gem 'cpf_cnpj'
