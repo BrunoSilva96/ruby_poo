@@ -596,6 +596,7 @@ Os modificadores de acessos mais comuns são:
 
 # Self
   O Self é uma palavra reservada que dá acesso ao objeto corrente. Assim dizemos que ao usarmos objeto.método estamos enviando o método ao objeto.
+  Sem a necessidade de instanciar um objeto para poder usar um método.
   
   
                                 class Teste
@@ -829,3 +830,39 @@ Os modificadores de acessos mais comuns são:
                         gem 'lerolero_generator'
                         gem 'cpf_utils'
                         gem 'cpf_cnpj'
+
+# Trabalhando com Arquivos
+  Primeiro colocamos o nome do arquivo e depois da maneira que desejamos abrir no caso (w = writer - Aberto para escrita)
+  No irb File.open('teste.txt', 'w') do |arquivo|
+          arquivo.puts "Bruno Silva - ruby"
+         end
+         (r = reader - Vai ler o arquivo)
+         Após da Enter o arquivo é criado na pasta onde abrimos o irb
+         File.open('teste.txt', 'r') do |arquivo|
+            while line = arquivo.gets
+              puts line
+            end
+         end
+         
+# ARGV - Argument Vector
+  Vai ler o arquivo que for chamado.
+  
+                      if ARGV.size > 0
+                      File.open(ARGV[0], 'r') do |arquivo|
+                         while line = arquivo.gets
+                          puts line
+                         end
+                      end
+                      else 
+
+                        puts "Você deve informar o nome do arquivo a ser aberto. Ex: ruby app.rb teste.txt"
+                      end
+                      
+# Executando comandos do SO
+  system('comando', 'comando')
+  
+# ASCII Art
+  Utilizar textos para desenhar. Fazer textos.... Serve para enfeitar.(Ler o arquivo que contem o ASCII Art igual o File.open do sortear_numero)
+
+# Gems para terminal
+(Site TTY gems) Exemplo está no arquivo inicializando.rb no jogo de adivinhar numero 'Jogo_melhorado'
