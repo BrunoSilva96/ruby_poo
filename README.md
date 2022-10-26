@@ -219,7 +219,7 @@ to_? = Pode ser usado de outra maneira além do gets.
 
           ----------------------------------------------------
           #A variável 'element' vai recebendo um por um dos elementos dentro do array e executando.
-          array.each do |element|#Quando se tme amis de uma linha de código, pode se usar o 'do'.
+          array.each do |element|#Quando se tem mais de uma linha de código, pode se usar o 'do'.
              puts element
              puts element * 2
              puts element * 3
